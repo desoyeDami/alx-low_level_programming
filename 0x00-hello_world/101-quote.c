@@ -5,10 +5,10 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+int main(void) 
 {
-	char str = "(and that piece of art is useful" - Dora Korpar, 2015-10-19)";
-	putchar(str);
+       	fwrite(2, "and that piece of art is useful" - Dora Korpar, 2015-10-19\n", 61);
 
-	return 0;
+	return (1);
+	}
 }
