@@ -2,11 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
-/*
- *	main - Entry point
+
+/**
+ * main - Entry point
  *
- *	Return: 0 (Success)
+ * Return: Always 0 (Success)
  */
+/* betty style doc for function main goes there */
 int main(void)
 {
 	int n;
