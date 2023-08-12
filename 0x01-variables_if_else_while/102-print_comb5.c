@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void) {
 	int num1, num2;
 	for (num1 = 0; num1 <= 99; num1++) 
