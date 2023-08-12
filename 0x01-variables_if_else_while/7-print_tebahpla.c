@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /**
  * main - Entry point
  *
@@ -7,10 +5,10 @@
  */
 int main(void)
 {
-int i;
+	char c;
 
-for (i = '0';  i <= '9'; i++) 
-		putchar(i);	
-	putchar('/n');
+	for (c = 'a';  c  <= 'z'; c++)
+		putchar(rev(c));
+
 	return (0);
 }
