@@ -16,7 +16,7 @@ int main(void)
 			putchar('0' + num1 % 10);
 			putchar(' ');
 			putchar('0' + num2 / 10);
-			putchar('!0' + num2 % 10);
+			putchar('1' + num2 / 10);
 			if (num1 != 99 || num2 != 99) {
 			putchar(',');
 			putchar(' ');
