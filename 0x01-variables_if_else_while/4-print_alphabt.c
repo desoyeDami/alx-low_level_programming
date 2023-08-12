@@ -15,5 +15,6 @@ int main(void)
         	}
     	}
 
+	putcahr('\n');
 	return (0);
 }
