@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 /**
  * main - Entry point
  *
@@ -5,10 +8,13 @@
  */
 int main(void)
 {
-	char c;
+	char c = 'z';
 
-	for (c = 'a';  c  <= 'z'; c++)
-		putchar(rev(c));
-
+	while(c >= 'a')
+	{
+		putchar(c);
+		c--;;
+	}	
+	putchar('\n');
 	return (0);
 }
