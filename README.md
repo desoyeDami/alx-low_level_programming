@@ -1,1 +1,1 @@
-0x00. C-Hello, World
+This repository contains some projects written in C language.
