@@ -7,7 +7,7 @@
  * Return: Always i (Success);
  * If an error occurs, -1 is returned.
  */
-int _putchar(int c)
+int _putchar(char c)
 {
         return (write(1, &c, 1));
 }
