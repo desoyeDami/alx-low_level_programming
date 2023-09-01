@@ -1,20 +1,12 @@
 #include "main.h"
 
-/*
- *
- *
- *
- *
- */
-
 void print_triangle(int size)
 {
-	int i = 1;
+	int j;	
 
-		while (i <= size)
+		for (j = 1; j <= size; j++)
 		{
-		_putchar('#');
-		i++;
+			_putchar('#');
 		}
 	_putchar('\n');
 }

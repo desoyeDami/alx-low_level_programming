@@ -1,6 +1,7 @@
 #include "main.h"
+#include "stdio.h"
 
-/*
+/**
  *
  *
  *
@@ -9,18 +10,16 @@
 
 void print_square(int size)
 {
-	int i = 1, j = 2;
+	char i, k;
 
-	while(j <= size)
+	for (k = 2; k <= size; k++)
 	{
-		while (i <= size)
+		for (i = '1'; i <= k; i++)
 		{
-		_putchar('#');
-		i++;
+			_putchar('#');
 		}
 
-		_putchar(j);
-		j++;
+		_putchar('\n');
 	}
-	_putchar('\n');
+
 }
