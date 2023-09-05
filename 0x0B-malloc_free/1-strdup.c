@@ -22,6 +22,9 @@ char *_strdup(char *str)
 	if (ptr == NULL)
 		return (NULL);
 
+	if (str == NULL)
+		return (NULL);
+
 	for (i = 0; i <= len; i++)
 		ptr[i] = str[i];
 
