@@ -38,14 +38,14 @@ void _strcpy(char *dest, const char *src)
 }
 
 /**
- * argstostr -  function that concatenates all the
+ * strtow -  function that concatenates all the
  * arguments of your program
  *
  * @ac: arguments count
  * @av: argument vectors
  * Return: Null if argument is zero else concat
  */
-char *argstostr(int ac, char **av)
+char **strtow(char *str)
 {
 	int i, len = 0, offset;
 	char *concat;

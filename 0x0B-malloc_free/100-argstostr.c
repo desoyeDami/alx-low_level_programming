@@ -10,7 +10,7 @@ int _strlen(const char *s)
 {
 	int count = 0;
 
-	while(*s != '\0')
+	while (*s != '\0')
 	{
 		count++;
 		s++;
@@ -51,7 +51,7 @@ char *argstostr(int ac, char **av)
 	char *concat;
 
 	if (ac == 0 || av == NULL)
-		return NULL;
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 		len += _strlen(av[i]) + 1;
@@ -59,7 +59,7 @@ char *argstostr(int ac, char **av)
 	concat = malloc(len);
 
 	if (concat == NULL)
-		return NULL;
+		return (NULL);
 
 	offset = 0;
 
@@ -72,5 +72,5 @@ char *argstostr(int ac, char **av)
 
 	concat[len - 1] = '\n';
 
-	return concat;
+	return (concat);
 }
