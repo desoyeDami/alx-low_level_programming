@@ -1,76 +1,57 @@
 #include <stdlib.h>
-#include "main.h"
+#include <stdio.h>
 
 /**
- * _strlen - function that gets string length
- * @s: points to a string
- * Return: string length
- */
-int _strlen(const char *s)
-{
-	int count = 0;
-
-	while(*s != '\0')
-	{
-		count++;
-		s++;
-	}
-
-	return (count);
-}
-
-/**
- * _strcpy - function copies string
- * @src: original string
- * @dest: copied string
- * Return: copied string
- */
-
-void _strcpy(char *dest, const char *src)
-{
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-}
-
-/**
- * strtow -  function that concatenates all the
- * arguments of your program
+ * **strtow - splits a string into words
  *
- * @ac: arguments count
- * @av: argument vectors
- * Return: Null if argument is zero else concat
+ * @str: string to split
+ * Return: pointer to array of strings, or NULL if fail
  */
 char **strtow(char *str)
 {
-	int i, len = 0, offset;
-	char *concat;
+	char **s;
+	int i, k, n, count_word = 0, len_of_word = 0, present_word = 0;
 
-	if (ac == 0 || av == NULL)
-		return NULL;
+	if (str == NULL || *str == '\0')
+		return (NULL);
 
-	for (i = 0; i < ac; i++)
-		len += _strlen(av[i]) + 1;
-
-	concat = malloc(len);
-
-	if (concat == NULL)
-		return NULL;
-
-	offset = 0;
-
-	for (i = 0; i < ac; i++)
+	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		_strcpy(concat + offset, av[i]);
-		offset += _strlen(av[i]);
-		concat[offset++] = '\n';
+		if (*(str + i) != ' ')
+			count_word++;
+		while (*(str + i) != ' ' && *(str + i))
+			i++;
+		if (!*(str + i))
+			break;
 	}
 
-	concat[len - 1] = '\n';
+	if (count_word == 0)
+		return (NULL);
 
-	return concat;
+	s = malloc(sizeof(char *) * (count_word + 1));
+
+	if (s == NULL)
+		return (NULL);
+
+	for (i = 0, k = i; present_word < count_word; i++, len_of_word = 0, k = i)
+	{
+		if (*(str + i) == ' ')
+			continue;
+		while (*(str + k) != ' ' && *(str + k++))
+			len_of_word++;
+
+		s[present_word] = malloc(sizeof(char) * len_of_word + 1);
+		if (!s[present_word])
+		{
+			while (present_word-- >= 0)
+				free(s[present_word]);
+			free(s);
+			return (NULL);
+		}
+		for (n = 0; i < k; i++, n++)
+			s[present_word][n] = *(str + i);
+		s[present_word++][n] = '\0';
+	}
+	s[count_word] = NULL;
+	return (s);
 }
