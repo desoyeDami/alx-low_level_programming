@@ -3,14 +3,19 @@
 /**
  * init_dog - function that initialize a variable of type struct dog
  * @d: pointer to the structure
- * @name: variable that holds the name
- * @age: variable that holds age
- * @owner: variable that holds the owner's name
+ * @name: pointer to the dog's name
+ * @age: pointer to the dog's age
+ * @owner: ptr variable to the dog's owner name
+ *
+ * Return: NULL;
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if(d)
+	{
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
+	}
 }
