@@ -8,7 +8,7 @@
  * @age: pointer to the dog's age
  * @owner: ptr variable to the dog's owner name
  *
- * Return: NULL;
+ * Return: Nothing
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
