@@ -10,7 +10,7 @@ void print_name(char *name, void (*f)(char *))
 {
 	if (name != NULL && f != NULL)
 	{
-		if (name[0] != '\0')  // Check if the first character is not the null terminator
+		if (name[0] != '\0')
 			f(name);
 		else
 			return;
