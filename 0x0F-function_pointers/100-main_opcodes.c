@@ -9,7 +9,7 @@ void print_opcodes(int num_bytes)
 {
 	int i;
 	unsigned char *main_addr = (unsigned char *)print_opcodes;
-    
+
 	if (num_bytes < 0)
 	{
 		printf("Error\n");
@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
 	}
 
 	int num_bytes = atoi(argv[1]);
+
 	print_opcodes(num_bytes);
 
 	return (0);
