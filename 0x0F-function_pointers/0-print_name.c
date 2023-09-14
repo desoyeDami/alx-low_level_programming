@@ -1,5 +1,5 @@
 #include "function_pointers.h"
-#include <stddef.h>
+#include <stdio.h>
 
 /**
  * print_name - Prints a name using a function pointer.
@@ -9,6 +9,14 @@
 void print_name(char *name, void (*f)(char *))
 {
 	if (name != NULL && f != NULL)
-		f(name);
-	return;
+	{
+		if (name[0] != '\0')  // Check if the first character is not the null terminator
+			f(name);
+		else
+			return;
+	}
+	else
+	{
+		return;
+	}
 }
