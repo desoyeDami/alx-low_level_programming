@@ -1,16 +1,16 @@
   global main
   extern printf
 
-  section .text   
+  section .text    
   main:
-      push rbp
+      push rbp    
       mov rbp, rsp
 
-      ; Call printf
-      mov rdi, msg
-      call printf
+      ; Call printf    
+      mov rdi, msg    
+      call printf  
 
-      pop rbp
+      pop rbp    
       ret
 
   section .data
