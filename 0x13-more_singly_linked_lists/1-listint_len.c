@@ -9,7 +9,7 @@
 
 size_t listint_len(const listint_t *h)
 {
-	size_t count = 0;
+	int count = 0;
 	const listint_t *current_point = h;
 
 	while (current_point != NULL)
