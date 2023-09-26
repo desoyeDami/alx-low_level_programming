@@ -1,4 +1,3 @@
-```markdown
 # Singly Linked Lists in C
 
 This C project is focused on implementing various operations on singly linked lists. It covers tasks such as printing the list, calculating its length, adding and removing nodes, reversing the list, and more.
