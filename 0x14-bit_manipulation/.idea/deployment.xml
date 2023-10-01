@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="desoyeproVagrant (4125c0a9-f4ee-4a87-8f3f-712d877295de)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/../.." web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
