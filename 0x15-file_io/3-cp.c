@@ -41,15 +41,15 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		exit_error(97, "Usage: cp file_from file_to\n");
-
 	fd_frm = open(file_from, O_RDONLY);
 	if (fd_frm == -1)
 		exit_error(98, "Error: Can't read from file %s\n", file_from);
-
-	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (access(file_to, F_OK) == 0)
+		fd_to = open(file_to, O_WRONLY | O_TRUNC);
+	else
+		fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 		exit_error(99, "Error: Can't write to %s\n", file_to);
-
 	while ((read_bytes = read(fd_frm, buffer, BUFFER_SIZE)) > 0)
 	{
 		written_bytes = write(fd_to, buffer, read_bytes);
@@ -60,7 +60,6 @@ int main(int argc, char *argv[])
 			exit_error(99, "Error: Can't write to %s\n", file_to);
 		}
 	}
-
 	if (read_bytes == -1)
 	{
 		close(fd_frm);
