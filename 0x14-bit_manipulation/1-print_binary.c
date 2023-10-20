@@ -1,33 +1,31 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_binary - Prints the binary representation of an unsigned long integer.
- * @n: The unsigned long integer to convert and print.
- *
- * Return: No return value (void).
+ * print_binary - Prints the binary representation of a number.
+ * @n: The number to be converted and printed.
  */
 void print_binary(unsigned long int n)
 {
-	int bufsiz = sizeof(int) * 8;
-	int i = bufsiz - 1, j;
-	char binbuf[32];
+	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int start_printing = 0;
 
 	if (n == 0)
 	{
-		_putchar('0');
+		putchar('0');
 		return;
 	}
 
-	while (n  && i >= 0)
+	while (mask > 0)
 	{
-		binbuf[i] = (n & 1) + '0';
-		n >>= 1;
-		i--;
+		if ((n & mask) == mask)
+		{
+			start_printing = 1;
+			putchar('1');
+		}
+		else if (start_printing)
+		{
+			putchar('0');
+		}
+		mask >>= 1;
 	}
-
-	for (j = i + 1; j < bufsiz; j++)
-	{
-		_putchar(binbuf[j]);
-	}
-	binbuf[j] = '\0';
 }
