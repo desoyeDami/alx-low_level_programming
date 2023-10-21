@@ -4,13 +4,13 @@
  *
  * Return: 1 if little-endian, 0 if big-endian.
  */
-int get_endianness(void) {
+int get_endianness(void)
+{
 	unsigned int sampleValue = 1;
 	char *bytePtr = (char *)&sampleValue;
 
-	if (*bytePtr == 1) {
-		return 1;
-	} else {
-		return 0;
-	}
+	if (*bytePtr == 1)
+		return (1);
+	else
+		return (0);
 }
